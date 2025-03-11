@@ -2,7 +2,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 
 export default function DetailScreen() {
-  const { name, description, image } = useLocalSearchParams();
+  const { name, description, image, longDescription } = useLocalSearchParams();
 
   return (
     <View style={styles.container}>
@@ -13,6 +13,7 @@ export default function DetailScreen() {
       )}
       <Text style={styles.title}>{name}</Text>
       <Text style={styles.description}>{description}</Text>
+      <Text style={styles.longDescription}>{longDescription}</Text>
     </View>
   );
 }
@@ -23,4 +24,5 @@ const styles = StyleSheet.create({
   imagePlaceholder: { textAlign: 'center', color: '#888', marginBottom: 10 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 10 },
   description: { fontSize: 18, color: '#555' },
+  longDescription: { fontSize: 18, color: '#555'},
 });

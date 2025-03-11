@@ -6,59 +6,69 @@ const attractions = [
     id: '1', 
     name: 'Malecón de Mazatlán', 
     description: 'Hermosa vista al mar.', 
+    longDescription: "",
     image: 'https://scontent.fmzt3-1.fna.fbcdn.net/v/t39.30808-6/481920029_586376851055626_5553615872810055271_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=85GvxDHnu68Q7kNvgFN3HZi&_nc_oc=Adi3sP7pZpNYCWuDntMtq8zGFSRbvKLAvWEY9Rax2ezVPJFzSMTgCDOkjaGQrIhieBfcopGd7kYie2x6suEWzykX&_nc_zt=23&_nc_ht=scontent.fmzt3-1.fna&_nc_gid=AKiG7nNInEy4bS2shuDnsD0&oh=00_AYESwsEy__elRxm-mOYweLvNe44_FrAHnWarMyWzBqJSXg&oe=67D3F1AB' 
   },
   { 
     id: '2', 
     name: 'Faro de Mazatlán', 
-    description: 'El faro natural más alto del mundo.', 
+    description: 'El faro natural más alto del mundo.',
+    longDescription: "", 
     image: 'https://www.hinds.es/wp-content/uploads/2023/04/10-cosas-altamente-calificadas-para-hacer-en-Mazatlan-Mexico.jpg' 
   },
   { 
     id: '3', 
     name: 'Isla de la Piedra', 
     description: 'Playas tranquilas y comida deliciosa.', 
+    longDescription: "",
     image: 'https://punto.mx/wp-content/uploads/2022/09/ISLA-DE-LA-PIEDRA-MAZATLAN.jpg' 
   },
   { 
     id: '4', 
     name: 'Teatro Ángela Peralta', 
     description: 'Histórico teatro restaurado, sede de eventos culturales y artísticos.',
+    longDescription: "",
     image: 'https://www.mexicoescultura.com/galerias/espacios/principal/teatroangela_peralta1_2.jpg' 
   },
   { 
     id: '5', 
     name: 'Centro Histórico', 
     description: 'Calles coloniales, plazas y una vibrante vida nocturna en el corazón de Mazatlán.',
+    longDescription: "",
     image: 'https://oem.com.mx/elsoldemazatlan/img/17879273/1657436089/BASE_LANDSCAPE/768/centro%20historico%20mazatlan.webp' 
   },
   { id: '6', 
     name: 'Acuario de Mazatlán', 
     description: 'Gran variedad de especies marinas, espectáculos con animales y exhibiciones educativas.',
+    longDescription: "",
     image:'https://cdn-3.expansion.mx/dims4/default/8f43edd/2147483647/strip/true/crop/4032x3024+0+0/resize/1200x900!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2Ff4%2F4a%2F5ea433944442bc4d9ade0ecae737%2Fimg-4046.jpg' 
   },
   { 
     id: '7', 
     name: 'Laguna del Camarón', 
     description: 'Un hermoso espacio natural con senderos y áreas de observación de aves.',
+    longDescription: "The Shrimp Lagoon is a unique ecosystem that is home to a great diversity of flora and fauna, a true natural treasure that deserves to be protected and preserved for future generations. It is a very important habitat for a variety of aquatic and terrestrial species, its calm waters and environment offer a refuge for migratory birds, such as herons, gulls and pelicans, which find here a resting place, in addition, the lagoon is home to various species of fish, crustaceans and mollusks.The importance of caring for and preserving this ecosystem cannot be underestimated, as it plays a fundamental role in the ecological balance of the region, according to people who come to this place to walk and spend moments of recreation.",
     image:'https://sinaloaenlinea.com/wp-content/uploads/2023/07/Imagen-de-WhatsApp-2023-07-05-a-las-12.23.47-1024x768.jpg' 
   },
   { 
     id: '8', 
     name: 'Zona Dorada', 
     description: 'La mejor zona turística con hoteles, restaurantes, bares y vida nocturna.',
+    longDescription: "",
     image:'https://lasflores.com.mx/temp/slider-01.jpg' 
   },
   { 
     id: '9', 
     name: 'Playa Cerritos', 
     description: 'Playa tranquila, ideal para surfistas y quienes buscan relajarse lejos del centro.',
+    longDescription: "",
     image:'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/209000/209433-Sinaloa.jpg' 
   },
   { 
     id: '10', 
     name: 'Carnaval de Mazatlán', 
     description: 'Uno de los carnavales más grandes y coloridos de México, con desfiles y conciertos.',
+    longDescription: "",
     image:'https://noro.mx/wp-content/uploads/2024/01/carnaval-de-mazatlan-2024-artistas-horarios-sinaloa-1024x576.jpeg' 
   },
 ];
@@ -81,6 +91,7 @@ export default function HomeScreen() {
             <View style={styles.textContainer}>
               <Text style={styles.itemText}>{item.name}</Text>
               <Text style={styles.description}>{item.description}</Text>
+              
             </View>
           </TouchableOpacity>
         )}
@@ -103,4 +114,5 @@ const styles = StyleSheet.create({
   textContainer: { padding: 15 },
   itemText: { fontSize: 18, fontWeight: 'bold' },
   description: { fontSize: 14, color: '#333', marginTop: 5 },
+  
 });
