@@ -1,8 +1,10 @@
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
+import { WebView } from 'react-native-webview';
+
 
 export default function DetailScreen() {
-  const { name, description, image, longDescription } = useLocalSearchParams();
+  const { name, description, image, longDescription, videoUrl } = useLocalSearchParams();
 
   return (
     <View style={styles.container}>
@@ -12,7 +14,15 @@ export default function DetailScreen() {
         <Text style={styles.imagePlaceholder}>No image available</Text>
       )}
       <Text style={styles.title}>{name}</Text>
-      <Text style={styles.description}>{description}</Text>
+      
+
+      {videoUrl && typeof videoUrl === 'string' && (
+        <WebView
+        source={{ uri: String(videoUrl) }}
+        style={styles.video}
+        allowsFullscreenVideo
+        />
+      ) }
 
       <View style={styles.scrollWrapper} >
 
@@ -34,6 +44,7 @@ const styles = StyleSheet.create({
   imagePlaceholder: { textAlign: 'center', color: '#888', marginBottom: 10 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 10 },
   description: { fontSize: 18, color: '#555' },
+  video: {width: '100%', height: 200, marginBottom: 10},
   
   scrollWrapper: { flex: 1, maxHeight: 300, marginTop: 10 }, 
   longDescription: { fontSize: 16, color: '#555', textAlign: 'justify'},
