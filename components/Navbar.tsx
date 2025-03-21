@@ -25,7 +25,9 @@ export const Navbar = () => {
         data={menuOptions}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => router.push(item.route)} style={styles.navItem}>
+          <TouchableOpacity onPress={() => router.push(item.route as any)} style={styles.navItem}>
+
+
             <Text style={styles.navText}>{item.title}</Text>
           </TouchableOpacity>
         )}
